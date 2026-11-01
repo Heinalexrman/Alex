@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Website</title>
+<style>
+    *{
+        box-sizing: border-box; 
+    }
+    body{
+        margin: 0;
+        font-family: sans-serif;
+        background-color: white;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 20px 60px;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .dev-badge{
+        background-color: rgb(191, 0, 0);
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 6px 12px;
+        border-radius: 8px;
+    }
+    .brand-name{
+        font-size: 24px;
+        font-weight: bold;
+        color: orange;
+    }
+    .right a{
+        color: gray;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: ease-in-out 0.3s;
+    }
+    .right a:hover{
+        color: aliceblue;
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 90%;
+        margin: 40px auto;
+        padding: 20px;
+        gap: 40px;
+    }
+    .left-content{
+        width: 50%;
+    }
+    .left-content h1{
+        font-size: 46px;
+        font-weight: bold;
+        color: navy;
+        margin-bottom: 20px;
+    }
+    .blue{
+        color: blue;
+    }
+    .cyan{
+        color: cyan;
+    }
+    .left-content p{
+        font-size: 18px;
+        color: gray;
+        margin-bottom: 30px;
+    }
+    .buttons{
+        display: flex;
+        gap: 15px;
+    }
+    .btn-work{
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .btn-contact{
+        background-color: white;
+        color: navy;
+        border: 1px solid green;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .right-content{
+        width: 50%;
+    }   
+    .right-content img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .skill-container{
+        display: flex;
+        gap: 25px;
+        padding: 5px 10px;
+    }
+    .skill-container-left{
+        width: 45%;
+    }
+    .skill-container-left img{
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+        border: 5px solid darkslateblue;
+    }
+    .skill-container-right{
+        width: 50%;
+    }
+    .progress .text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .outer-color{
+        background-color: lightgray;
+        height: 10px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .inner-color{
+        background-image: linear-gradient(320deg, purple, cyan, blue);
+        width: 90%;
+        height: 100%;
+        border-radius: 4px;
+    }
+    .gradient{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 32px;
+        background-image: linear-gradient(320deg, purple, cyan, blue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: italic;
+    }
+    .text1{
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: gray;
+    }
+    .text2{
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .text3{
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: navy;
+    }
+    .expert-container{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .expert-container .child{
+        width: 32%;
+        border: 1px solid burlywood;
+        box-shadow: 0px 0px 12px rgb(0, 72, 255);
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin: 5px 8px;
+
+    }
+    .expert-container .child img{
+        width: 100px;
+        height: 80px;
+        border-radius: 5px;
+    }
+    .expert-container .child a{
+        text-decoration: none;
+        background-color: aquamarine;
+        padding: 5px 8px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        color: navy;
+    }
+    .expert-container .child button{
+        display: block;
+        margin-top: 10px;
+        padding: 10px 5px;
+        border-radius: 5px;
+    }
+    footer{
+        padding: 15px;
+        text-align: center;
+    }
+    footer p{
+        font-size: 15px;
+        font-weight: bold;
+        font-style: italic;
+        color: blue;
+    }
+
+/* For Smaller Device */
+
+@media (max-width:750px){
+    nav{
+        background-color: green;
+        flex-direction: column  ;
+    }
+    .right a{
+        font-size: 14px;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 2px;
+    }
+    .right{
+        margin-top: 20px;
+    }
+    .container{
+        flex-direction: column;
+        width: 100%;
+        padding: 8px;
+        background-color: rgb(0, 215, 215);
+    }
+    .left-content{
+        width: 95%;
+    }
+    .left-content h1{
+        font-size: 23px;
+        margin-bottom: 5px;
+    }
+    .buttons{
+        gap: 10px;
+    }
+    .btn-work{
+        padding: 8px 15px;
+        font-size: 15px;
+    }
+    .btn-contact{
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    .right-content{
+        width: 90%;
+    }
+    .skill-container{
+        flex-direction: column;
+        background-color: goldenrod;
+    }
+    .skill-container-left{
+        width: 98%;
+    }
+    .skill-container-left img{
+        height: 300px;
+    }
+    .skill-container-right{
+        width: 98%;
+    }
+    .expert-container{
+        flex-direction: column;
+    }
+    .expert-container .child{
+        width: 90%;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .expert-container .child button{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    .expert-container .child img{
+        width: 250px;
+        height: 200px;
+    }
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <span class="dev-badge">DEV</span>
+        <span class="brand-name">StudentLab</span>
+    </div>
+    <div class="right">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Services</a>
+        <a href="">Projects</a>
+        <a href="">Contact</a>
+        <a href="">Terms of service</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="left-content">
+        <h1>Welcome to my<span class="blue"> CODING</span> <span class="cyan">WEBSITE</span>!!! </h1>
+        <p>I am a passionate web developer creating clean, responsive and student-focused web templates. Let's have fun coding together!.</p>
+        <div class="buttons">
+            <button class="btn-work">My Projects</button>
+            <button class="btn-contact">Contact Me</button>
+        </div>
+    </div>
+    <div class="right-content">
+        <img src="img/blue.jpg">
+    </div>
+</div>
+
+<div class="skill-container">
+
+    <div class="skill-container-left">
+        <img src="img/53B.jpg">
+    </div>
+
+    <div class="skill-container-right">
+        <h1 class="gradient">Developing and Designing</h1>
+        <p>Here is my progress on my coding journey. It has been a struggle for sure but it is something that I can keep track of and slowly motivate myself to improve and work towards my goals</p>
+
+        <div class="progress">
+            <p class="text">
+                <span>HTML</span>
+                <span>90%</span>
+            </p>
+            <div class="progress-bar">
+                <div class="outer-color">
+                    <div class="inner-color"></div>
+                </div>
+            </div>
+        </div>
+        <div class="progress">
+            <p class="text">
+                <span>CSS</span>
+                <span>80%</span>
+            </p>
+            <div class="progress-bar">
+                <div class="outer-color">
+                    <div class="inner-color" style="width: 80%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="progress">
+            <p class="text">
+                <span>JavaScript</span>
+                <span>70%</span>
+            </p>
+            <div class="progress-bar">
+                <div class="outer-color">
+                    <div class="inner-color" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="text1"> What I do </p>
+<p class="text2"> Services and Expertise </p>
+<p class="text3"> Qualities I excel at and can perform effeciently </p>
+
+<div class="expert-container">
+    <!--Child Element-->
+    <div class="child">
+        <img src="img/bolt.jpg">
+        <h3>Responsive Web Design</h3>
+        <p>Creating websites that look perfect no matter what device it is viewed on</p>
+        <a href="">Mobile First</a>
+        <a href="">CSS Grid</a>
+        <button>Learn More</button>
+    </div>
+    <div class="child">
+        <img src="img/paint.jpg">
+        <h3>UI/UX Layouts</h3>
+        <p>User centered interfaces with colorful designs</p>
+        <a href="">Figma</a>
+        <a href="">CSS Variables</a>
+        <button>Learn More</button>
+    </div>
+    <div class="child">
+        <img src="img/tool.jpg">
+        <h3>Clean Code Structure</h3>
+        <p>Clean and well commented codes with an easy to follow layout</p>
+        <a href="">HTML5</a>
+        <a href="">SEO Friendly</a>
+        <button>Learn More</button>
+    </div>
+    <!--Child Element End-->
+</div>
+
+<p class="text1"> PORTFOLIO </p>
+<p class="text2"> Featured Projects </p>
+<p class="text3"> A collection of sample web projects built using HTML and CSS. </p>
+
+<div class="expert-container">
+    <!--Child Element-->
+    <div class="child">
+        <img src="img/bolt.jpg">
+        <h3>E-Commerce Landing Page</h3>
+        <p>A modern showcase page for digital products featuring CSS Grid product cards and responsive navigation.</p>
+        <a href="">HTML5</a>
+        <a href="">CSS Flexbox</a>
+        <button>View Project</button>
+    </div>
+    <div class="child">
+        <img src="img/bolt.jpg">
+        <h3>Educational Quiz App</h3>
+        <p>Interactive quiz application interface designed for students learning HTML & CSS basics.</p>
+        <a href="">JavaScript</a>
+        <a href="">UI Design</a>
+        <button>View Project</button>
+    </div>
+    <div class="child">
+        <img src="img/bolt.jpg">
+        <h3>Agency Website Template</h3>
+        <p>Multi-section corporate agency landing template with dark mode footer and contact form.</p>
+        <a href="">CSS Variables</a>
+        <a href="">Grid</a>
+        <button>View Project</button>
+    </div>
+    <!--Child Element End-->
+</div>
+
+<footer>
+    <p>&copy Created by Alex @ 2026</p>
+</footer>
+
+</body>
+</html> 
